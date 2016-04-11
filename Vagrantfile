@@ -43,6 +43,10 @@ cd hammmocks
 # composerインストール
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
+#redisインストール
+yum install -y redis --enablerepo=epel
+chkconfig redis on
+service redis start
 SCRIPT
 config.vm.provision :shell, :inline => script
 
